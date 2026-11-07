@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>QEVRO.com — Luxury Clothing, Perfume & Eyewear</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400;500&display=swap">
+<style>
+:root{--bg:#0a0a0a;--card:#141414;--gold:#c9a24b;--gold2:#e8cf8a;--text:#f2ede2;--muted:#9a9382;--line:#2a2418;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px;background:var(--bg)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Montserrat,Arial,sans-serif;font-weight:300;line-height:1.6}
+h1,h2,h3,.logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;margin:0}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;justify-content:space-between;padding:14px 5vw;background:rgba(10,10,10,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.logo{font-size:28px;letter-spacing:.35em;color:var(--gold)}
+nav{display:flex;gap:26px;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+nav a:hover{color:var(--gold)}
+.cartbtn{background:none;border:1px solid var(--gold);color:var(--gold);padding:8px 16px;font:inherit;font-size:12px;letter-spacing:.15em;cursor:pointer}
+.cartbtn:hover{background:var(--gold);color:#000}
+.menu{display:none;background:none;border:0;color:var(--gold);font-size:26px;cursor:pointer}
+.hero{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 6vw;background:radial-gradient(circle at 50% 30%,#2a2210 0,#0a0a0a 65%)}
+.hero small{letter-spacing:.5em;color:var(--gold);font-size:12px;text-transform:uppercase}
+.hero h1{font-size:clamp(44px,9vw,104px);line-height:1.05;margin:18px 0;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:520px;color:var(--muted);margin:0 0 32px}
+.btn{display:inline-block;padding:14px 38px;background:linear-gradient(90deg,var(--gold),var(--gold2));color:#000;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{filter:brightness(1.1)}
+section{padding:70px 5vw}
+.title{text-align:center;margin-bottom:34px}
+.title h2{font-size:clamp(30px,5vw,46px);color:var(--gold)}
+.title span{display:block;width:60px;height:1px;background:var(--gold);margin:14px auto 0}
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:auto}
+.cat{border:1px solid var(--line);background:var(--card);padding:44px 20px;text-align:center;cursor:pointer;transition:.3s}
+.cat:hover{border-color:var(--gold);transform:translateY(-4px)}
+.cat .ico{font-size:40px;margin-bottom:10px}
+.cat h3{font-size:26px;color:var(--gold2)}
+.cat p{margin:6px 0 0;color:var(--muted);font-size:13px}
+.tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.tab{background:none;border:1px solid var(--line);color:var(--muted);padding:10px 24px;font:inherit;font-size:12px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
+.tab.on,.tab:hover{border-color:var(--gold);color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px;max-width:1200px;margin:auto}
+.card{position:relative;background:var(--card);border:1px solid var(--line);transition:.3s}
+.card:hover{border-color:var(--gold)}
+.img{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:76px;background:linear-gradient(145deg,#1c170b,#0d0d0d)}
+.img{overflow:hidden}
+.img svg{width:100%;height:100%;display:block}
+.badge{position:absolute;top:10px;left:10px;z-index:2;background:linear-gradient(90deg,#c9a24b,#e8cf8a);color:#000;font-size:10px;font-weight:500;letter-spacing:.12em;padding:4px 9px}
+.old{color:var(--muted);font-size:13px;margin-right:8px}
+.img img{width:100%;height:100%;object-fit:cover;display:block}
+.info{padding:18px;text-align:center}
+.info h3{font-size:22px}
+.info small{color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-size:10px}
+.price{color:var(--gold);margin:8px 0 14px;font-size:17px}
+.add{width:100%;padding:11px;background:none;border:1px solid var(--gold);color:var(--gold);font:inherit;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
+.add:hover{background:var(--gold);color:#000}
+.about{text-align:center;background:var(--card);border-block:1px solid var(--line)}
+.about p{max-width:640px;margin:0 auto;color:var(--muted)}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:34px auto 0;font-size:13px;color:var(--gold2)}
+footer{background:#070707;border-top:1px solid var(--gold);padding:56px 5vw 24px;color:var(--muted);font-size:13px}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:34px;max-width:1100px;margin:auto}
+footer .logo{font-size:30px;display:block;margin-bottom:10px}
+footer h4{font-family:"Cormorant Garamond",Georgia,serif;color:var(--gold2);font-size:20px;margin:0 0 14px;letter-spacing:.1em}
+footer a{display:block;margin-bottom:8px}
+footer a:hover{color:var(--gold)}
+.fwa{display:inline-block!important;margin-top:6px;padding:10px 22px;border:1px solid var(--gold);color:var(--gold)}
+.fwa:hover{background:var(--gold);color:#000!important}
+.fbot{max-width:1100px;margin:36px auto 0;padding-top:20px;border-top:1px solid var(--line);text-align:center;font-size:12px}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr 1fr}.fgrid>div:first-child{grid-column:1/-1}}
+.drawer{position:fixed;top:0;right:-100%;width:min(400px,100%);height:100%;background:#0f0f0f;border-left:1px solid var(--gold);z-index:40;transition:.35s;display:flex;flex-direction:column;padding:20px;padding-top:calc(20px + env(safe-area-inset-top,0px));padding-bottom:calc(20px + env(safe-area-inset-bottom,0px))}
+.drawer.open{right:0}
+.drawer h3{color:var(--gold);font-size:28px;display:flex;justify-content:space-between}
+.drawer h3 button{background:none;border:0;color:var(--text);font-size:26px;cursor:pointer}
+#items{flex:1;overflow:auto;margin:16px 0}
+.row{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.row .n{flex:1}
+.row .q{display:flex;align-items:center;gap:8px}
+.row .q button{width:26px;height:26px;background:none;border:1px solid var(--gold);color:var(--gold);cursor:pointer}
+.total{display:flex;justify-content:space-between;color:var(--gold);font-size:20px;margin-bottom:14px}
+.empty{color:var(--muted);text-align:center;margin-top:40px}
+.mask{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:30;display:none}
+.mask.on{display:block}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,120px);background:var(--gold);color:#000;padding:12px 22px;font-size:13px;z-index:50;transition:.35s}
+.toast.on{transform:translate(-50%,0)}
+@media(max-width:760px){
+ nav{position:fixed;top:0;right:-100%;width:70%;height:100%;flex-direction:column;background:#0f0f0f;padding:90px 30px;transition:.3s;z-index:25;border-left:1px solid var(--gold)}
+ nav.open{right:0}
+ .menu{display:block}
+ .cats{grid-template-columns:1fr}
+ .feats{grid-template-columns:1fr}
+ .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+ .img{font-size:54px}
+ .info{padding:12px}
+ .info h3{font-size:18px}
+ section{padding:50px 4vw}
+}
+</style>
+</head>
+<body>
+<header>
+ <button class="menu" id="menu" aria-label="Menu">☰</button>
+ <a href="#top" class="logo">QEVRO</a>
+ <nav id="nav">
+  <a href="#categories">Categories</a><a href="#shop">Shop</a><a href="#about">About</a>
+ </nav>
+ <button class="cartbtn" id="open">BAG (<span id="count">0</span>)</button>
+</header>
+
+<div class="hero" id="top">
+ <small>Maison de Luxe</small>
+ <h1>QEVRO</h1>
+ <p>Timeless clothing, signature perfumes and refined eyewear — crafted for those who live in gold.</p>
+ <a href="#shop" class="btn">Explore Collection</a>
+</div>
+
+<section id="categories">
+ <div class="title"><h2>Our Collections</h2><span></span></div>
+ <div class="cats">
+  <div class="cat" data-c="clothing"><div class="ico">👔</div><h3>Clothing</h3><p>Tailored elegance</p></div>
+  <div class="cat" data-c="perfume"><div class="ico">🧴</div><h3>Perfume</h3><p>Signature scents</p></div>
+  <div class="cat" data-c="glasses"><div class="ico">🕶️</div><h3>Glasses</h3><p>Iconic eyewear</p></div>
+ </div>
+</section>
+
+<section id="shop">
+ <div class="title"><h2>Shop QEVRO</h2><span></span></div>
+ <div class="tabs" id="tabs">
+  <button class="tab on" data-c="all">All</button>
+  <button class="tab" data-c="clothing">Clothing</button>
+  <button class="tab" data-c="perfume">Perfume</button>
+  <button class="tab" data-c="glasses">Glasses</button>
+ </div>
+ <div class="grid" id="grid"></div>
+</section>
+
+<section class="about" id="about">
+ <div class="title"><h2>The QEVRO Promise</h2><span></span></div>
+ <p>QEVRO is where modern luxury meets timeless craft. Every piece is chosen for quality, finish and presence.</p>
+ <div class="feats"><div>✦ Premium Quality</div><div>✦ Gift-Ready Packaging</div><div>✦ Order via WhatsApp</div></div>
+</section>
+
+<footer>
+ <div class="fgrid">
+  <div><span class="logo">QEVRO</span>Luxury clothing, signature perfumes and refined eyewear. Crafted for those who live in gold.</div>
+  <div><h4>Quick Links</h4><a href="#top">Home</a><a href="#categories">Collections</a><a href="#shop">Shop</a><a href="#about">About</a></div>
+  <div><h4>Categories</h4><a href="#shop" data-c="clothing" class="fcat">Clothing</a><a href="#shop" data-c="perfume" class="fcat">Perfume</a><a href="#shop" data-c="glasses" class="fcat">Glasses</a></div>
+  <div><h4>Contact</h4><span>WhatsApp: 0370 8106785</span><br><span>Instagram: @QEVRO9</span><br><a class="fwa" href="https://wa.me/923708106785" target="_blank" rel="noopener">Chat on WhatsApp</a><br><a class="fwa" href="https://www.instagram.com/QEVRO9/" target="_blank" rel="noopener">Follow on Instagram</a></div>
+ </div>
+ <div class="fbot">© 2026 QEVRO.com. All rights reserved.</div>
+</footer>
+
+<div class="mask" id="mask"></div>
+<aside class="drawer" id="drawer">
+ <h3>Your Bag <button id="close" aria-label="Close">×</button></h3>
+ <div id="items"></div>
+ <div class="total"><span>Total</span><span id="total">Rs 0</span></div>
+ <button class="btn" id="order">Order on WhatsApp</button>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+var WA="923708106785";
+var U=0;
+function tee(c,d,t){var k="t"+(U++);var b="M132 62 L88 84 L34 150 L80 188 L112 160 L112 346 Q200 362 288 346 L288 160 L320 188 L366 150 L312 84 L268 62 Q200 104 132 62 Z";return '<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="'+k+'" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".28"/><stop offset=".35" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient></defs><ellipse cx="200" cy="372" rx="120" ry="9" fill="#000" opacity=".5"/><path d="'+b+'" fill="'+c+'" stroke="#c9a24b" stroke-opacity=".45" stroke-width="1.5"/><path d="'+b+'" fill="url(#'+k+')"/><path d="M132 62 Q200 120 268 62 Q200 98 132 62 Z" fill="'+d+'"/><path d="M112 160 Q150 175 160 200 M288 160 Q250 175 240 205 M150 300 Q200 312 250 300 M175 230 Q190 260 170 290" fill="none" stroke="#000" stroke-opacity=".18" stroke-width="2"/><text x="200" y="150" text-anchor="middle" font-family="Georgia,serif" font-size="17" letter-spacing="5" fill="'+t+'">QEVRO</text></svg>'}
+function shades(l1,l2){var k="g"+(U++);var r='x="50" y="166" width="125" height="92" rx="34"';var r2='x="225" y="166" width="125" height="92" rx="34"';return '<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="'+k+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+l1+'"/><stop offset="1" stop-color="'+l2+'"/></linearGradient></defs><ellipse cx="200" cy="292" rx="150" ry="9" fill="#000" opacity=".5"/><path d="M52 190 L22 178 M348 190 L378 178" stroke="#c9a24b" stroke-width="12" stroke-linecap="round"/><path d="M52 190 L22 178 M348 190 L378 178" stroke="#0b0b0b" stroke-width="8" stroke-linecap="round"/><path d="M175 196 Q200 172 225 196" fill="none" stroke="#c9a24b" stroke-width="12"/><path d="M175 196 Q200 172 225 196" fill="none" stroke="#0b0b0b" stroke-width="8"/><rect '+r+' fill="url(#'+k+')" stroke="#c9a24b" stroke-width="13"/><rect '+r2+' fill="url(#'+k+')" stroke="#c9a24b" stroke-width="13"/><rect '+r+' fill="none" stroke="#0b0b0b" stroke-width="8"/><rect '+r2+' fill="none" stroke="#0b0b0b" stroke-width="8"/><path d="M72 182 L112 182 L86 242 L68 234 Z" fill="#fff" opacity=".2"/><path d="M247 182 L287 182 L261 242 L243 234 Z" fill="#fff" opacity=".2"/><circle cx="52" cy="190" r="4" fill="#e8cf8a"/><circle cx="348" cy="190" r="4" fill="#e8cf8a"/></svg>'}
+var SCENT="<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 800\" width=\"800\" height=\"800\" xmlns:c2pa=\"http://c2pa.org/manifest\"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpkZTkyYjgwNS02Njk5LTQyYWMtOGY5ZS01Yjk5ODI0NjdkYWQAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaC9yEihBCytjvGtUOXJ84PwAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDowNDk1ODExMC02ZGE0LTQxOGMtODI2Mi03ZWMwMGI2M2M0NTdscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNouPy6OnlLPVCFiRKDJuOgOAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggbj2pYwmgP99i77oXgwQOvAFIW3m2p9BvgI6oh1+w4TekZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaFrka+eWBfDEA1y/ybXGhj8AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCAXGCEQL3G9V+zSwbilpm4aazqR5f7yts8OJ37kec5nQWRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBiWZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmRlOTJiODA1LTY2OTktNDJhYy04ZjllLTViOTk4MjQ2N2RhZC9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjc2YjRmOWNmLWE5OGUtNDQ3Yi1hMjFjLWM2OGQ5Nzg0MDM0M3JjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBuPaljCaA/32LvuheDBA68AUhbeban0G+AjqiHX7DhN6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggmK57fxeRdLabOFqjFMG9o3K+OKBI6nRjMQ2pKhfBmSeiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg3YpjOv23p+9vCea5ehqvLuzqJvA+7yuNlRBHVyfEkt10Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQMXeBG9r22VbSiw9Pw5xAmlX8M0KATLSpkI87CLc42BDitLYod1+W2GzYpV5Z47EVY0+ksS1/lXtetTCfOjSrV8=</c2pa:manifest></metadata><defs><radialGradient id=\"bg\" cx=\"50%\" cy=\"38%\" r=\"70%\"><stop offset=\"0\" stop-color=\"#3a2d12\"/><stop offset=\".55\" stop-color=\"#14100a\"/><stop offset=\"1\" stop-color=\"#050505\"/></radialGradient><linearGradient id=\"gold\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#8a6a22\"/><stop offset=\".3\" stop-color=\"#f0d98f\"/><stop offset=\".55\" stop-color=\"#c9a24b\"/><stop offset=\"1\" stop-color=\"#6e5218\"/></linearGradient><linearGradient id=\"glass\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#1a1a1a\"/><stop offset=\".25\" stop-color=\"#2c2c2c\"/><stop offset=\".6\" stop-color=\"#0d0d0d\"/><stop offset=\"1\" stop-color=\"#1c1c1c\"/></linearGradient><linearGradient id=\"liquid\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#e8cf8a\" stop-opacity=\".55\"/><stop offset=\"1\" stop-color=\"#9a6f1e\" stop-opacity=\".85\"/></linearGradient><linearGradient id=\"shine\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#fff\" stop-opacity=\".55\"/><stop offset=\"1\" stop-color=\"#fff\" stop-opacity=\"0\"/></linearGradient><radialGradient id=\"floor\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0\" stop-color=\"#c9a24b\" stop-opacity=\".45\"/><stop offset=\"1\" stop-color=\"#c9a24b\" stop-opacity=\"0\"/></radialGradient></defs><ellipse cx=\"400\" cy=\"672\" rx=\"260\" ry=\"30\" fill=\"url(#floor)\"/><ellipse cx=\"400\" cy=\"668\" rx=\"200\" ry=\"14\" fill=\"#000\" opacity=\".7\"/><rect x=\"346\" y=\"140\" width=\"108\" height=\"100\" rx=\"10\" fill=\"url(#gold)\"/><rect x=\"346\" y=\"140\" width=\"108\" height=\"14\" rx=\"7\" fill=\"#f6e7b0\" opacity=\".6\"/><rect x=\"370\" y=\"240\" width=\"60\" height=\"32\" fill=\"url(#gold)\" opacity=\".9\"/><rect x=\"246\" y=\"270\" width=\"308\" height=\"394\" rx=\"30\" fill=\"url(#glass)\" stroke=\"url(#gold)\" stroke-width=\"3\"/><rect x=\"260\" y=\"372\" width=\"280\" height=\"278\" rx=\"20\" fill=\"url(#liquid)\"/><rect x=\"306\" y=\"400\" width=\"188\" height=\"176\" fill=\"#0a0a0a\" fill-opacity=\".82\" stroke=\"#c9a24b\" stroke-width=\"1.5\"/><rect x=\"314\" y=\"408\" width=\"172\" height=\"160\" fill=\"none\" stroke=\"#c9a24b\" stroke-opacity=\".5\" stroke-width=\".8\"/><text x=\"400\" y=\"476\" text-anchor=\"middle\" font-family=\"Georgia,serif\" font-size=\"38\" letter-spacing=\"9\" fill=\"#e8cf8a\">QEVRO</text><line x1=\"350\" y1=\"496\" x2=\"450\" y2=\"496\" stroke=\"#c9a24b\" stroke-width=\"1\"/><text x=\"400\" y=\"526\" text-anchor=\"middle\" font-family=\"Georgia,serif\" font-size=\"13\" letter-spacing=\"4\" fill=\"#c9a24b\">EAU DE PARFUM</text><text x=\"400\" y=\"550\" text-anchor=\"middle\" font-family=\"Georgia,serif\" font-size=\"12\" letter-spacing=\"3\" fill=\"#9a9382\">100 ML</text><rect x=\"266\" y=\"290\" width=\"14\" height=\"340\" rx=\"7\" fill=\"url(#shine)\" opacity=\".6\"/><rect x=\"520\" y=\"300\" width=\"6\" height=\"300\" rx=\"3\" fill=\"url(#shine)\" opacity=\".25\"/><g fill=\"#f0d98f\"><circle cx=\"170\" cy=\"230\" r=\"3\" opacity=\".7\"/><circle cx=\"640\" cy=\"320\" r=\"2.5\" opacity=\".6\"/><circle cx=\"590\" cy=\"170\" r=\"3.5\" opacity=\".5\"/><circle cx=\"210\" cy=\"520\" r=\"2\" opacity=\".5\"/><circle cx=\"660\" cy=\"560\" r=\"3\" opacity=\".6\"/></g></svg>";
+var P=[
+{id:1,c:"clothing",n:"Boys T-Shirt — Black",p:3500,o:7000,s:tee("#111","#000","#e8cf8a")},
+{id:2,c:"clothing",n:"Boys T-Shirt — Green",p:3500,o:7000,s:tee("#1f6b45","#14472d","#e8cf8a")},
+{id:3,c:"clothing",n:"Boys T-Shirt — White",p:3500,o:7000,s:tee("#f4f1ea","#d9d4c6","#a8832f")},
+{id:4,c:"perfume",n:"QEVRO Eau de Parfum 100ml",p:3500,o:7000,s:SCENT},
+{id:5,c:"glasses",n:"Black Shades",p:6500,s:shades("#0c0c0c","#3a3a3a")},
+{id:6,c:"glasses",n:"Green Shades",p:5500,s:shades("#1d7a4c","#0b3a24")}];
+var cart=[],cat="all";
+var $=function(i){return document.getElementById(i)};
+function money(n){return "Rs "+n.toLocaleString("en-US")}
+function render(){
+ var h="";
+ P.filter(function(x){return cat=="all"||x.c==cat}).forEach(function(x){
+  h+='<div class="card">'+(x.o?'<span class="badge">50% OFF</span>':'')+'<div class="img">'+(x.s?x.s:x.i?'<img loading="lazy" src="'+x.i+'" alt="'+x.n+'">':x.e)+'</div><div class="info"><small>'+x.c+'</small><h3>'+x.n+'</h3><div class="price">'+(x.o?'<s class="old">'+money(x.o)+'</s>':'')+money(x.p)+'</div><button class="add" data-id="'+x.id+'">Add to Bag</button></div></div>';
+ });
+ $("grid").innerHTML=h;
+}
+function setCat(c){
+ cat=c;
+ document.querySelectorAll(".tab").forEach(function(t){t.classList.toggle("on",t.dataset.c==c)});
+ render();
+}
+function toast(m){var t=$("toast");t.textContent=m;t.classList.add("on");setTimeout(function(){t.classList.remove("on")},1800)}
+function drawCart(){
+ var h="",tot=0,cnt=0;
+ cart.forEach(function(i){
+  tot+=i.p*i.q;cnt+=i.q;
+  h+='<div class="row"><span class="n">'+i.n+'<br><small style="color:#c9a24b">'+money(i.p)+'</small></span><span class="q"><button data-m="'+i.id+'">−</button>'+i.q+'<button data-a="'+i.id+'">+</button></span></div>';
+ });
+ $("items").innerHTML=h||'<div class="empty">Your bag is empty.</div>';
+ $("total").textContent=money(tot);$("count").textContent=cnt;
+}
+function toggle(o){$("drawer").classList.toggle("open",o);$("mask").classList.toggle("on",o)}
+document.addEventListener("click",function(e){
+ var t=e.target;
+ if(t.dataset.id){
+  var id=+t.dataset.id,f=cart.filter(function(x){return x.id==id})[0];
+  if(f)f.q++;else{var pr=P.filter(function(x){return x.id==id})[0];cart.push({id:pr.id,n:pr.n,p:pr.p,q:1})}
+  drawCart();toast("Added to your bag");
+ }
+ if(t.dataset.a){cart.forEach(function(x){if(x.id==+t.dataset.a)x.q++});drawCart()}
+ if(t.dataset.m){cart.forEach(function(x){if(x.id==+t.dataset.m)x.q--});cart=cart.filter(function(x){return x.q>0});drawCart()}
+ var cc=t.closest&&t.closest(".cat");
+ if(cc){setCat(cc.dataset.c);$("shop").scrollIntoView({behavior:"smooth"})}
+ if(t.classList.contains("tab"))setCat(t.dataset.c);
+ if(t.classList.contains("fcat"))setCat(t.dataset.c);
+ if(t.closest&&t.closest("#nav a"))$("nav").classList.remove("open");
+});
+$("open").onclick=function(){toggle(true)};
+$("close").onclick=$("mask").onclick=function(){toggle(false)};
+$("menu").onclick=function(){$("nav").classList.toggle("open")};
+$("order").onclick=function(){
+ if(!cart.length){toast("Your bag is empty");return}
+ var m="Hello QEVRO, I would like to order:\n",tot=0;
+ cart.forEach(function(i){m+="• "+i.n+" x"+i.q+" — "+money(i.p*i.q)+"\n";tot+=i.p*i.q});
+ m+="Total: "+money(tot);
+ window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(m),"_blank");
+};
+render();drawCart();
+</script>
+</body>
+</html>
